@@ -1,0 +1,25 @@
+package Infosys;
+
+public class pascalTriangle {
+
+	void pascalTri() {
+		
+	}
+	
+	void pascalRow() {
+		
+	}
+	
+	void pascalEle() {
+		
+	}
+	
+	
+	public static void main(String args[]) {
+		pascalTriangle ob = new pascalTriangle();
+		
+		
+		
+		
+	}
+}

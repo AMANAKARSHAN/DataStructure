@@ -1,0 +1,35 @@
+package DynamicProgramming;
+
+public class EqualSumPartition {
+	int dp[][];
+	//boolean dp1[][];
+	
+	public void ArrayInit(int n,int tot_wt) {
+		dp = new int[n+1][tot_wt+1];
+		for(int i=0;i<n+1;i++) {
+			for(int j=0;j<tot_wt+1;j++) {
+				dp[i][j]=-1;
+			}
+		}
+	}
+	
+	public boolean recEqualSumPartition(int wt[],int tot_sum,int n) {
+		
+		return false;
+	}
+	
+
+	public static void main(String[] args) {
+		EqualSumPartition ob = new EqualSumPartition();
+		int wt[]= {43,2,31,5,3,8};
+		int tot_wt=39;
+		int n=wt.length;
+		System.out.println(ob.recEqualSumPartition(wt,tot_wt,n));
+		ob.ArrayInit(n,tot_wt);
+		System.out.println(ob.tabEqualSumPartition(wt,tot_wt,n));
+		ob.ArrayInit(n,tot_wt);
+		System.out.println(ob.memEqualSumPartition(wt,tot_wt,n));
+
+	}
+
+}

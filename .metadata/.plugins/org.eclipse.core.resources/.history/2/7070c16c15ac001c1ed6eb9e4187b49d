@@ -1,0 +1,64 @@
+package DynamicProgramming;
+
+public class EqualSumPartition {
+	static int dp[][];
+	//boolean dp1[][];
+	
+	public static void ArrayInit(int n,int tot_wt) {
+		dp = new int[n+1][tot_wt+1];
+		for(int i=0;i<n+1;i++) {
+			for(int j=0;j<tot_wt+1;j++) {
+				dp[i][j]=-1;
+			}
+		}
+	}
+	
+	public static boolean recEqualSumPartition(int wt[],int tot_sum,int n) {
+		if(tot_sum==0)
+			return true;
+		if(n==0)
+			return false;
+		if(wt[n-1]<=tot_sum)
+			return recEqualSumPartition(wt,tot_sum,n-1) ||
+					recEqualSumPartition(wt,tot_sum-wt[n-1],n-1);
+		else
+			return recEqualSumPartition(wt,tot_sum,n-1);
+		
+	}
+	
+	public static boolean memEqualSumPartition(int wt[],int tot_sum,int n) {
+		
+		return false;
+	}
+	
+	public static boolean tabEqualSumPartition(int wt[],int tot_sum,int n) {
+		
+		return false;
+	}
+	
+	public void allEqualSumPartition(int wt[],int n) {
+		int sum=0;
+		for(int i=0;i<n;i++)
+			sum=sum+wt[i];
+		
+		if(sum%2!=0)
+			System.out.println(false);
+		else {
+		System.out.println(recEqualSumPartition(wt,sum,n));
+		//ArrayInit(n,tot_wt);
+		//System.out.println(tabEqualSumPartition(wt,tot_wt,n));
+		//ArrayInit(n,tot_wt);
+		//System.out.println(memEqualSumPartition(wt,tot_wt,n));
+		}
+		
+	}
+	
+
+	public static void main(String[] args) {
+		EqualSumPartition ob = new EqualSumPartition();
+		int wt[]= {23,14,4,7,6};
+		int n=wt.length;
+		ob.allEqualSumPartition(wt,n);
+	}
+
+}

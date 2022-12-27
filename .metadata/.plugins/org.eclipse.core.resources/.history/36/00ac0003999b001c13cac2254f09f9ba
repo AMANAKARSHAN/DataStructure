@@ -1,0 +1,22 @@
+package tree;
+
+public class BinaryTree1 {
+
+	public static void main(String[] args) {
+		BT a = new BT();
+		Node root = a.CreateNewNode(2);
+		root.left = a.CreateNewNode(7);
+		root.right = a.CreateNewNode(5);
+		root.left.left = a.CreateNewNode(2);
+		root.left.right = a.CreateNewNode(6);
+		root.left.right.left = a.CreateNewNode(5);
+		root.left.right.right = a.CreateNewNode(11);
+		root.right.right = a.CreateNewNode(9);
+		root.right.right.left = a.CreateNewNode(4);
+		
+		System.out.println("Inorder Traversal: ");
+		a.inorder(root);
+		
+	}
+
+}
